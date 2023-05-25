@@ -23,10 +23,11 @@ public class Solution {
 
     private static List<String> getWords(String s) {
         List<String> list = new ArrayList<>();
-        if (s == null || s.isEmpty()) return list;
-        Matcher matcher = pattern.matcher(s);
-        while (matcher.find()) {
-            list.add(matcher.group());
+        if (s != null && !s.isEmpty()) {
+            Matcher matcher = pattern.matcher(s);
+            while (matcher.find()) {
+                list.add(matcher.group());
+            }
         }
         return list;
     }
