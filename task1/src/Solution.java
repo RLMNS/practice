@@ -16,12 +16,12 @@ public class Solution {
         paragraphs.forEach(paragraph -> {
             System.out.println("Paragraph: " + paragraph);
             System.out.println("Word count: " +
-                    getMatches(paragraph).size());
+                    getWords(paragraph).size());
             System.out.println();
         });
     }
 
-    private static List<String> getMatches(String s) {
+    private static List<String> getWords(String s) {
         List<String> list = new ArrayList<>();
         if (s == null || s.isEmpty()) return list;
         Matcher matcher = pattern.matcher(s);
