@@ -6,7 +6,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Solution {
-    private static Pattern pattern = Pattern.compile("(\\b[^\\s]+\\b)");
     public static void main(String[] args) {
         String text = args[0];
 
@@ -16,15 +15,15 @@ public class Solution {
         paragraphs.forEach(paragraph -> {
             System.out.println("Paragraph: " + paragraph);
             System.out.println("Word count: " +
-                    getMatches(paragraph).size());
+                    getWords(paragraph).size());
             System.out.println();
         });
     }
 
-    private static List<String> getMatches(String s) {
+    private static List<String> getWords(String s) {
         List<String> list = new ArrayList<>();
         if (s == null || s.isEmpty()) return list;
-        Matcher matcher = pattern.matcher(s);
+        Matcher matcher = Pattern.compile("(\\b[^\\s]+\\b)").matcher(s);
         while (matcher.find()) {
             list.add(matcher.group());
         }
